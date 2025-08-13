@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Feedback</h3>
+<div class="mb-3">
+  <a class="btn btn-primary" href="{% url 'feedback:feedback_submit' %}">New Feedback</a>
+</div>
+<div class="list-group">
+  {% for f in items %}
+    <div class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <strong>From: {{ f.sender.username }}</strong>
+        <small class="text-muted">{{ f.created_at|date:"M d, Y H:i" }}</small>
+      </div>
+      <p class="mb-1">{{ f.message }}</p>
+      {% if f.reply %}
+        <div class="alert alert-info py-2 my-2"><strong>Reply:</strong> {{ f.reply }}</div>
+      {% endif %}
+    </div>
+  {% empty %}
+    <div class="text-muted">No feedback yet.</div>
+  {% endfor %}
+</div>
+{% endblock %}

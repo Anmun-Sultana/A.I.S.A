@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Student Dashboard</h2>
+<div class="mt-3">
+  <a class="btn btn-outline-primary me-2" href="{% url 'students:attendance_report' %}">My Attendance</a>
+  <a class="btn btn-outline-primary me-2" href="{% url 'students:leave_apply' %}">Apply Leave</a>
+  <a class="btn btn-outline-primary" href="{% url 'students:leave_list' %}">My Leave Requests</a>
+</div>
+{% endblock %}

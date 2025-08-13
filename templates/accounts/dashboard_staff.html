@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Staff Dashboard</h2>
+<p>Mark attendance and review leave requests.</p>
+<div class="mt-3">
+  <a class="btn btn-outline-primary me-2" href="{% url 'staff:attendance_mark' %}">Mark Attendance</a>
+  <a class="btn btn-outline-primary" href="{% url 'staff:leave_review_list' %}">Review Leaves</a>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>My Attendance ({{ percent }}%)</h3>
+<table class="table table-striped">
+  <thead><tr><th>Date</th><th>Subject</th><th>Present</th></tr></thead>
+  <tbody>
+    {% for a in items %}
+      <tr>
+        <td>{{ a.date }}</td>
+        <td>{{ a.subject.code }} — {{ a.subject.name }}</td>
+        <td>{{ a.present|yesno:"Yes,No" }}</td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="3" class="text-muted">No attendance records yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

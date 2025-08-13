@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Manage courses, subjects, notifications, and review leaves.</p>
+<div class="mt-3">
+  <a class="btn btn-outline-primary me-2" href="{% url 'adminpanel:course_list' %}">Courses</a>
+  <a class="btn btn-outline-primary me-2" href="{% url 'adminpanel:notification_list' %}">Notifications</a>
+  <a class="btn btn-outline-primary" href="{% url 'adminpanel:leave_review_list' %}">Review Leaves</a>
+</div>
+{% endblock %}
